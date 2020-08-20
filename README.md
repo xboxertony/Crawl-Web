@@ -7,7 +7,12 @@ r = requests.post(url,{'encodeURIComponent':1,'step':1,'firstin':1,'off':1,'isQu
 r.encoding = 'utf_8_sig'  ###要記得中文會有亂碼，因此要先encode成編碼形式
 df = pd.read_html(r.text, header = None)
 ```
+
+<br> 
+
 #### 這邊使用pandas套件，以dataFrame形式來整理財報<br><br>dataFrame的好處在於，他可以讀取任何形式的資料，並整理成類似下面表格<br><br>_橫軸是公司代號、縱軸是日期_
+
+<br>
 
 |    |1101  | 1102 |  1103  | 1104  | 1108  | 1109 |  1110 |  1201  | 1203 | 1210 |
 |----|----|----|:----:|----|----|----|----|----|----|----|
@@ -17,10 +22,16 @@ df = pd.read_html(r.text, header = None)
 |10404   |7.39   |7.44  |7.55  |26.78   |9.22  |-1.32   |7.78  |-10.94  |6.93  |0.62  |
 |10501   |0.53   |1.49 |-34.92  |31.02  |10.48  |-3.79  |56.46  |-2.34   |7.94 |3.37  |
 
-#### 有了這些資料，我們可以進行許多分析，例如：
+<br>
 
-***
+#### 有了這些資料，我們可以進行許多分析，例如：
+<br>
+
+
 1. 選取前五季稅後純益率年成長及毛利率年成長>0的股票
+
+<br>
+
 ```python
 df_all_1 = df_all_gross>df_all_gross.shift(4)
 df_all_2 = df_all_tax>df_all_tax.shift(4)
@@ -39,8 +50,19 @@ print(method)
 >篩選出來的股號如上，利用Dataframe的性質，可以很快地做出條件式的篩選
 
 ***
+<br>
+<br>
 
-2. 也可以看看目前上市公司的稅後純益率落在那些區塊
+2. 也可以看看目前上市公司的稅後純益率落在那些區塊，利用直方圖呈現
 
+<br>
+
+```python
+df['稅後純益率'].hist(bins = range(-20,40))
+plt.xlabel('profit rate')
+plt.ylabel('Frequency')
+```
+
+[img]
 
 * 財報資料來源：https://mops.twse.com.tw/mops/web/t146sb05
