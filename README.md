@@ -65,4 +65,14 @@ plt.ylabel('Frequency')
 
 ![img](股價分析與爬蟲/稅後純益直方圖.png)
 
+> dataframe可以直接利用直方圖作，只要在任何的df後面接.hist就好
+
+***
+
+<br>
+
+### 以上這些原始碼，都放在股價分析與爬蟲中
+
+<br>
+
 * 財報資料來源：https://mops.twse.com.tw/mops/web/t146sb05
