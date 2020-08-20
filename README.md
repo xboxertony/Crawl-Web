@@ -63,6 +63,6 @@ plt.xlabel('profit rate')
 plt.ylabel('Frequency')
 ```
 
-[img]
+<img>稅後純益直方圖.png
 
 * 財報資料來源：https://mops.twse.com.tw/mops/web/t146sb05
