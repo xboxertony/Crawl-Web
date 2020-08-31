@@ -53,6 +53,8 @@ print(method)
     
 >篩選出來的股號如上，利用Dataframe的性質，可以很快地做出條件式的篩選
 
+<br>
+
 ***
 <br>
 <br>
@@ -70,6 +72,8 @@ plt.ylabel('Frequency')
 ![img](股價分析與爬蟲/稅後純益直方圖.png)
 
 > dataframe可以直接利用直方圖作，只要在任何的df後面接.hist就好
+
+<br>
 
 ***
 
